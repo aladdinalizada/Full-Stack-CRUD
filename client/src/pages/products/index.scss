@@ -1,0 +1,30 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  margin: 2rem 0;
+  .card {
+    border: 1px solid #eaeaea;
+    padding: 20px;
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+  }
+  button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 10px 0;
+    margin-left: 20px;
+    &:hover {
+      background-color: #333;
+    }
+  }
+}

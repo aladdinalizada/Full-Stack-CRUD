@@ -1,0 +1,50 @@
+details 
+
+
+
+app.get("/products/:id", (req, res) => {
+  const product = product.find((p) => p.id === parseInt(req.params.id));
+  if (!product)
+    res.status(404).send("The product with the given ID was not found.");
+  res.send(product);
+});
+
+
+
+
+  const { error } = validateProduct(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
+
+
+
+
+  app.put("/products/:id", (req, res) => {
+    const product = product.find((p) => p.id === parseInt(req.params.id));
+    if (!product)
+        res.status(404).send("The product with the given ID was not found.");
+    product.title = req.body.title;
+    product.price = req.body.price;
+    product.description = req.body.description;
+    product.category = req.body.category;
+    product.image = req.body.image;
+    product.rating = req.body.rating;
+    res.send(product);
+});
+
+
+
+
+
+
+
+app.delete ("/products/:id",
+  (req, res) => {
+    //   delete product
+    const product = product.find((p) => p.id === parseInt(req.params.id));
+    if (!product) {
+      res.status(404).send("The product with the given ID was not found.");
+    }
+    const index = product.indexOf(product);
+    product.splice(index, 1);
+    res.send(product);
+  });
